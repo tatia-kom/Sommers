@@ -1,0 +1,221 @@
+@import "layout/var";
+
+.questions {
+  background: white url('../img/questions-bg.png') no-repeat bottom left;
+  padding-bottom: 350px;
+
+  @media (max-width: $md) {
+    background-position: bottom left -400px;
+  }
+
+  @media (max-width: $sm) {
+    background-size: 60%;
+    background-position: bottom left;
+    padding-bottom: 110px;
+  }
+
+  &__title {
+    text-align: center;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 85px;
+    position: relative;
+
+    @media (max-width: $md) {
+      margin-top: 35px;
+    }
+
+    @media (max-width: $sm) {
+      margin-top: 30px;
+      flex-direction: column;
+    }
+
+    @media (max-width: $xs) {
+      margin-top: 15px;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 50%;
+    flex-shrink: 0;
+    background: white;
+    position: relative;
+    z-index: 8;
+
+    @media (max-width: $sm) {
+      margin-left: 50px;
+    }
+
+    @media (max-width: $xs) {
+      width: 100%;
+      margin-left: 0;
+    }
+
+    &--reverse {
+      flex-direction: row-reverse;
+
+      @media (max-width: $sm) {
+        margin: 30px 50px 0 auto;
+      }
+
+      .questions__info {
+        margin: 0 32px 0 0;
+
+        @media (max-width: $md) {
+          margin-right: 0;
+        }
+      }
+
+      .questions__img {
+        margin: 0;
+      }
+    }
+  }
+
+  &__info {
+    margin-left: 32px;
+
+    @media (max-width: $md) {
+      margin-left: 0;
+    }
+  }
+
+  &__name {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 41px;
+
+    @media (max-width: 1479px) {
+      font-size: 24px;
+    }
+
+    @media (max-width: $md) {
+      font-size: 18px;
+    }
+
+    @media (max-width: $xs) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+
+  &__description {
+    font-size: 18px;
+    margin-top: 18px;
+
+    @media (max-width: 1479px) {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    @media (max-width: $md) {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+
+    @media (max-width: $xs) {
+      font-size: 12px;
+    }
+  }
+
+  &__button {
+    width: 302px;
+    margin-top: 32px;
+
+    @media (max-width: 1479px) {
+      width: 250px;
+      font-size: 16px;
+      margin-top: 15px;
+      height: 54px;
+
+      &:before {
+        height: 50px;
+      }
+
+      &:after {
+        height: 50px;
+      }
+    }
+
+    @media (max-width: $md) {
+      width: 200px;
+    }
+
+    @media (max-width: $xs) {
+      width: 150px;
+      height: 32px;
+      font-size: 14px;
+
+      &:before, &:after {
+        height: 30px;
+      }
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+    margin-right: 60px;
+    align-self: flex-end;
+    display: flex;
+    align-items: flex-end;
+
+    @media (max-width: 1479px) {
+      height: 250px;
+
+      img {
+        max-height: 100%;
+      }
+    }
+
+    @media (max-width: $md) {
+      margin-right: 30px;
+    }
+
+    @media (max-width: $xs) {
+      height: 205px;
+    }
+  }
+
+  &__shadow {
+    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
+    position: absolute;
+    left: 64px;
+    top: 11px;
+    bottom: 17px;
+    z-index: 7;
+    width: calc(50% - 64px - 52px);
+
+    @media (max-width: $sm) {
+      height: calc(250px - 11px - 17px);
+      left: 114px;
+    }
+
+    @media (max-width: $xs) {
+      width: calc(100% - 60px);
+      left: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+      height: calc(205px - 11px - 17px);
+    }
+
+    &--right {
+      left: auto;
+      right: 52px;
+
+      @media (max-width: $sm) {
+        top: auto;
+        right: 102px;
+      }
+
+      @media (max-width: $xs) {
+        left: 30px;
+        right: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,800&display=swap&subset=cyrillic-ext');
+
+@font-face {
+  font-family: 'Droid Serif Regular';
+  src: url('../fonts/DroidSerif.eot');
+  src: url('../fonts/DroidSerif.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/DroidSerif.woff') format('woff'),
+  url('../fonts/DroidSerif.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Droid Serif Bold';
+  src: url('../fonts/DroidSerif-Bold.eot');
+  src: url('../fonts/DroidSerif-Bold.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/DroidSerif-Bold.woff') format('woff'),
+  url('../fonts/DroidSerif-Bold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+$titleFont: 'Droid Serif Regular', sans-serif;
+$titleFontBold: 'Droid Serif Bold', sans-serif;
+
+//colors
+
+$blue: #00C2FF;
+
+//media
+
+$md: 1199px;
+$sm: 991px;
+$xs: 767px;
+
+// mixins
+
+@mixin placeholderColor($color) {
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-ms-input-placeholder {
+    color: $color;
+  }
+  &::placeholder {
+    color: $color;
+  }
+}

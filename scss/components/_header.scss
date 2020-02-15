@@ -1,0 +1,187 @@
+@import "layout/var";
+
+.header {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  position: relative;
+  z-index: 1;
+  padding: 8px 0;
+
+  @media (max-width: $xs) {
+    padding-bottom: 15px;
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $xs) {
+      flex-wrap: wrap;
+      position: relative;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $sm) {
+      flex-shrink: 0;
+      width: 250px;
+    }
+
+    @media (max-width: $xs) {
+      width: auto;
+      order: 0;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+    line-height: 25px;
+    color: white;
+    margin-left: 24px;
+
+    @media (max-width: $md) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+
+    @media (max-width: $sm) {
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    @media (max-width: $xs) {
+      display: none;
+    }
+  }
+
+  &__socials {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: $sm) {
+      width: 100%;
+    }
+
+    @media (max-width: $xs) {
+      order: 2;
+      margin-top: 15px;
+    }
+  }
+
+  &__soc {
+    width: 40px;
+    height: 40px;
+    border: 1px solid white;
+    border-radius: 50%;
+    margin: 0 12px;
+    display: flex;
+
+    @media (max-width: $sm) {
+      width: 30px;
+      height: 30px;
+      margin: 0 5px;
+    }
+
+    &:hover {
+      background: $blue;
+      border-color: $blue;
+    }
+
+    img {
+      margin: auto;
+
+      @media (max-width: $sm) {
+        max-width: 60%;
+        max-height: 60%;
+      }
+    }
+  }
+
+  &__right {
+    @media (max-width: $sm) {
+      width: 150px;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: $xs) {
+      order: 1;
+    }
+  }
+
+  &__phone-text {
+    font-size: 14px;
+    line-height: 19px;
+    color: white;
+    display: block;
+
+    @media (max-width: $sm) {
+      font-size: 12px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    align-items: center;
+
+    @media (max-width: $sm) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__phone {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 33px;
+    color: white;
+
+    @media (max-width: $sm) {
+      width: 100%;
+      font-size: 18px;
+    }
+
+    &:hover {
+      color: $blue;
+    }
+  }
+
+  &__mes {
+    margin-left: 16px;
+    margin-top: 3px;
+
+    @media (max-width: $sm) {
+      margin: 3px 16px 0 0;
+    }
+
+    svg path {
+      transition: 0.3s;
+    }
+
+    &:hover {
+      path {
+        fill: $blue;
+      }
+    }
+  }
+
+
+
+  &__mobile-menu-button {
+    @media (max-width: $xs) {
+      position: absolute;
+      right: 0;
+      top: 60px;
+
+      span {
+        width: 24px;
+        height: 2px;
+        background: white;
+        display: block;
+        margin: 5px 0;
+      }
+    }
+  }
+}

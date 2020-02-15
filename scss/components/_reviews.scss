@@ -1,0 +1,15 @@
+@import "layout/var";
+
+.reviews {
+  background: white url('../img/world.png') no-repeat top -30px center;
+  background-size: 100%;
+  padding-top: 50px;
+
+  @media (max-width: $md) {
+    padding-top: 35px;
+  }
+
+  @media (max-width: $xs) {
+    padding-top: 15px;
+  }
+}
