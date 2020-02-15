@@ -9,6 +9,9 @@ $(document).ready(function() {
             block.addClass('categories__item--active');
             setTimeout(function() {
                 block.removeClass('categories__item--active');
+                if (i == 3) {
+                    $('.categories__item').eq(1).addClass('categories__item--active');
+                }
             }, 200);
         }, i*300);
     });
@@ -51,8 +54,19 @@ $(document).ready(function() {
 
     $('.boats__more').click(function(e) {
         e.preventDefault();
-        $('.boats__more').remove();
-        $('.boats__item--hidden').removeClass('boats__item--hidden');
+        if ($(this).hasClass('boats-show')) {
+            $(this).text('Свернуть все').removeClass('boats-show').addClass('boats-hide');
+            $('.boats__item--hidden').removeClass('boats__item--hidden');
+        }
+        else {
+            $(this).text('Показать все').removeClass('boats-hide').addClass('boats-show');
+            $('.boats__item').each(function(i) {
+                if (i > 2) {
+                    $(this).addClass('boats__item--hidden');
+                }
+            });
+            $('html, body').animate({ scrollTop: $('.boats').offset().top }, 400);
+        }
     });
 
     $('.reviews__slider-phones').slick({
