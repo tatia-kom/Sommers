@@ -41,7 +41,7 @@
     height: 307px;
     background-size: cover;
     background-position: center;
-    padding: 19px 39px 0;
+    //padding: 19px 39px 0;
     position: relative;
 
     @media (max-width: 1699px) {
@@ -51,7 +51,7 @@
     @media (max-width: 1479px) {
       width: 370px;
       height: 250px;
-      padding: 15px 25px 0;
+      //padding: 15px 25px 0;
     }
 
     @media (max-width: $md) {
@@ -62,12 +62,17 @@
     @media (max-width: $sm) {
       width: 230px;
       height: 180px;
-      padding: 10px 15px 0;
+      //padding: 10px 15px 0;
     }
 
     @media (max-width: $xs) {
       width: 100%;
-      padding: 10px 20px 0;
+      //padding: 10px 20px 0;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
     }
   }
 

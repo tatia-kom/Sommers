@@ -16,6 +16,39 @@ $(document).ready(function() {
         }, i*300);
     });
 
+
+    $('.tel-input').inputmask({
+        "mask": "+7 (999) 999-99-99"
+        , "placeholder": "_"
+        , showMaskOnHover: false
+        , showMaskOnFocus: true
+    });
+
+    $('.open-modal').click(function(e) {
+        e.preventDefault();
+        $('body').addClass('modal-opened');
+        $('.modal').addClass('modal--opened');
+    });
+
+    $('.modal').click(function() {
+        $('.modal').removeClass('modal--opened');
+        $('body').removeClass('modal-opened');
+    });
+
+    $('.modal__block').click(function(e) {
+        e.stopPropagation();
+    });
+
+
+
+
+    $('.categories__item').mouseover(function() {
+        $('.categories__item--active').removeClass('categories__item--active');
+    });
+    $('.categories__item').mouseout(function() {
+        $('.categories__item').eq(1).addClass('categories__item--active');
+    });
+
     $(window).scroll(function(e) {
         if ($(window).scrollTop() > (welcomeTop - height + 150)) {
             $('.welcome__item').each(function(i) {
@@ -55,11 +88,26 @@ $(document).ready(function() {
     $('.boats__more').click(function(e) {
         e.preventDefault();
         if ($(this).hasClass('boats-show')) {
-            $(this).text('Свернуть все').removeClass('boats-show').addClass('boats-hide');
-            $('.boats__item--hidden').removeClass('boats__item--hidden');
+
+            $('.boats__item').each(function(i) {
+                if (i > 2) {
+                    const block = $(this);
+
+                    if (i == 3) {
+                        block.removeClass('boats__item--hidden');
+                    }
+                    else {
+                        setTimeout(function() {
+                            block.removeClass('boats__item--hidden');
+                        }, (i-3)*300);
+                    }
+                }
+            });
+
+            $(this).html('<span>Свернуть все</span>').removeClass('boats-show').addClass('boats-hide');
         }
         else {
-            $(this).text('Показать все').removeClass('boats-hide').addClass('boats-show');
+            $(this).html('<span>Показать все</span>').removeClass('boats-hide').addClass('boats-show');
             $('.boats__item').each(function(i) {
                 if (i > 2) {
                     $(this).addClass('boats__item--hidden');
