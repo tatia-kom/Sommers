@@ -321,6 +321,8 @@
 
   &__slide-text {
     padding-left: 100px;
+    display: flex!important;
+    flex-direction: column;
 
     @media (max-width: $md) {
       padding-left: 50px;
@@ -381,6 +383,7 @@
     font-weight: bold;
     font-size: 36px;
     line-height: 49px;
+    margin-bottom: 32px;
 
     @media (max-width: 1479px) {
       font-size: 24px;
@@ -391,6 +394,7 @@
       margin-top: 20px;
       font-size: 16px;
       line-height: 20px;
+      margin-bottom: 20px;
     }
 
     small {
@@ -407,7 +411,7 @@
 
   &__insta {
     display: block;
-    margin-top: 32px;
+    margin-top: auto;
     width: 364px;
     height: 57px;
     background: linear-gradient(83.62deg, #FFD855 -5.49%, #FC5345 46.67%, #CA38A9 108.31%);
@@ -428,7 +432,6 @@
     @media (max-width: $sm) {
       width: 250px;
       height: 40px;
-      margin-top: 20px;
       font-size: 16px;
       padding: 4px 0 0 24px;
       box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.3);

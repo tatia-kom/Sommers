@@ -154,6 +154,15 @@ $(document).ready(function() {
         ]
     });
 
+    var revMaxHeight = 0;
+
+    $('.reviews__slide-text').each(function() {
+        const revHeight = $(this).height();
+        if (revHeight > revMaxHeight) revMaxHeight = revHeight;
+    });
+
+    $('.reviews__slide-text').css({height: revMaxHeight+'px'});
+
     reviewsTextSlider.on('beforeChange', function(event, slick, currentSlide, nextSlide){
         $('.reviews__nums').text(nextSlide+1+'/'+reviewsSliderCount);
     });
