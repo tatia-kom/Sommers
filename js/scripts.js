@@ -68,7 +68,7 @@ $(document).ready(function() {
         $('.head__menu-wrap').slideToggle();
     });
 
-    $('.video').slick({
+    const videoSlider = $('.video').slick({
         arrows: true,
         autoplay: false,
         infinite: true,
@@ -83,6 +83,17 @@ $(document).ready(function() {
                 }
             }
         ]
+    });
+
+    $('.video__stop').click(function(e) {
+        const currentIndex = parseInt($('.video__slide.slick-current').attr('data-slick-index'));
+        const thisIndex = parseInt($(this).parents('.video__slide').attr('data-slick-index'));
+        if (thisIndex > currentIndex) {
+            videoSlider.slick('slickNext');
+        }
+        else {
+            videoSlider.slick('slickPrev');
+        }
     });
 
     $('.boats__more').click(function(e) {
