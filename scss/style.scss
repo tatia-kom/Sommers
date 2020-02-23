@@ -5,13 +5,18 @@
 @import "components/header";
 @import "components/head";
 
-@import "components/categories";
-@import "components/welcome";
-@import "components/video";
-@import "components/boats";
-@import "components/course";
-@import "components/reviews";
-@import "components/questions";
+// index page
+
+@import "components/index/categories";
+@import "components/index/welcome";
+@import "components/index/video";
+@import "components/index/boats";
+@import "components/index/course";
+@import "components/index/reviews";
+@import "components/index/questions";
+
+// schedule
+@import "components/schedule/schedule";
 
 // footer
 @import "components/footer";

@@ -170,7 +170,10 @@
 
 
   &__mobile-menu-button {
+    display: none;
+
     @media (max-width: $xs) {
+      display: block;
       position: absolute;
       right: 0;
       top: 60px;

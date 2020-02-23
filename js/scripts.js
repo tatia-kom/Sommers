@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    var welcomeTop = $('.welcome__lineblock').offset().top;
+    var welcomeTop = $('.welcome__lineblock').length > 0 ? $('.welcome__lineblock').offset().top : 0;
     var height = $(window).height();
 
     $('.categories__item').each(function(i) {
