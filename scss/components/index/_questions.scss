@@ -1,17 +1,11 @@
 @import "layout/var";
 
 .questions {
-  background: white url('../img/questions-bg.png') no-repeat bottom left;
-  padding-bottom: 350px;
-
-  @media (max-width: $md) {
-    background-position: bottom left -400px;
-  }
+  background: white;
+  padding-bottom: 100px;
 
   @media (max-width: $sm) {
-    background-size: 60%;
-    background-position: bottom left;
-    padding-bottom: 110px;
+    padding-bottom: 50px;
   }
 
   @media (max-width: $xs) {
@@ -23,23 +17,32 @@
     padding-top: 0;
   }
 
-  &__flex {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 85px;
-    position: relative;
-
-    @media (max-width: $md) {
-      margin-top: 35px;
-    }
+  &__subtitle {
+    text-align: center;
+    max-width: 100%;
+    font-size: 24px;
+    line-height: 33px;
+    margin-top: 24px;
 
     @media (max-width: $sm) {
-      margin-top: 30px;
-      flex-direction: column;
+      font-size: 16px;
+      margin-top: 15px;
     }
 
     @media (max-width: $xs) {
-      margin-top: 15px;
+      line-height: 18px;
+      font-size: 14px;
+    }
+  }
+
+  &__flex {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 28px;
+    position: relative;
+
+    @media (max-width: $xs) {
+      flex-direction: column;
     }
   }
 
@@ -53,41 +56,43 @@
     position: relative;
     z-index: 8;
 
-    @media (max-width: $sm) {
-      margin-left: 50px;
-    }
-
     @media (max-width: $xs) {
       width: 100%;
-      margin-left: 0;
+      justify-content: center;
     }
 
     &--reverse {
       flex-direction: row-reverse;
 
-      @media (max-width: $sm) {
-        margin: 30px 50px 0 auto;
+      @media (max-width: $xs) {
+        margin-top: 30px;
       }
 
       .questions__info {
-        margin: 0 32px 0 0;
+        @media (max-width: 1479px) {
+          margin-left: auto;
+        }
 
         @media (max-width: $md) {
-          margin-right: 0;
+          margin-left: 30px;
         }
-      }
 
-      .questions__img {
-        margin: 0;
+        @media (max-width: $sm) {
+          margin-left: 15px;
+        }
       }
     }
   }
 
   &__info {
-    margin-left: 32px;
+    margin: 0 auto;
 
     @media (max-width: $md) {
       margin-left: 0;
+    }
+
+    @media (max-width: $xs) {
+      margin: 0;
     }
   }
 
@@ -97,11 +102,12 @@
     line-height: 41px;
 
     @media (max-width: 1479px) {
-      font-size: 24px;
+      font-size: 22px;
     }
 
     @media (max-width: $md) {
       font-size: 18px;
+      line-height: 22px;
     }
 
     @media (max-width: $xs) {
@@ -152,6 +158,15 @@
       width: 200px;
     }
 
+    @media (max-width: $sm) {
+      width: 150px;
+      height: 42px;
+
+      &:before, &:after {
+        height: 40px;
+      }
+    }
+
     @media (max-width: $xs) {
       width: 150px;
       height: 32px;
@@ -165,62 +180,35 @@
 
   &__img {
     flex-shrink: 0;
-    margin-right: 60px;
     align-self: flex-end;
     display: flex;
     align-items: flex-end;
+    width: 341px;
+    margin: 0 18px;
+
+    @media (max-width: 1699px) {
+      width: 300px;
+    }
 
     @media (max-width: 1479px) {
-      height: 250px;
-
-      img {
-        max-height: 100%;
-      }
+      width: 250px;
+      margin: 0 10px;
     }
 
     @media (max-width: $md) {
-      margin-right: 30px;
+      width: 220px;
     }
-
-    @media (max-width: $xs) {
-      height: 205px;
-    }
-  }
-
-  &__shadow {
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.4);
-    position: absolute;
-    left: 64px;
-    top: 11px;
-    bottom: 17px;
-    z-index: 7;
-    width: calc(50% - 64px - 52px);
 
     @media (max-width: $sm) {
-      height: calc(250px - 11px - 17px);
-      left: 114px;
+      width: 150px;
     }
 
     @media (max-width: $xs) {
-      width: calc(100% - 60px);
-      left: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
-      height: calc(205px - 11px - 17px);
+      width: 120px;
     }
 
-    &--right {
-      left: auto;
-      right: 52px;
-
-      @media (max-width: $sm) {
-        top: auto;
-        right: 102px;
-      }
-
-      @media (max-width: $xs) {
-        left: 30px;
-        right: auto;
-      }
+    img {
+      max-width: 100%;
     }
   }
 }
