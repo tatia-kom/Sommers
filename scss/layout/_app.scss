@@ -129,6 +129,45 @@ footer {
         bottom: 0;
         background: linear-gradient(180.64deg, #051E75 6.31%, rgba(0, 56, 255, 0) 119.16%);
     }
+
+    // video
+
+    &__video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1;
+            background: linear-gradient(180.64deg, #051E75 6.31%, rgba(0, 56, 255, 0) 119.16%);
+        }
+
+        @media (max-width: $xs) {
+            display: none;
+        }
+
+        video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            z-index: 0;
+        }
+    }
 }
 
 .button {
