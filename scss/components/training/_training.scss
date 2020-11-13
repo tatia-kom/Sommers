@@ -1,0 +1,97 @@
+@import "layout/var";
+
+.training {
+  &__head {
+    display: flex;
+    margin: 28px 0 60px;
+    transition: 0.3s;
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+      margin: 15px 0 30px;
+    }
+
+    &--hidden {
+      opacity: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+  }
+
+  &__img {
+    max-width: 26%;
+
+    @media (max-width: $xs) {
+      max-width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &--rev {
+      width: 435px;
+      flex-shrink: 0;
+
+      @media (max-width: $xs) {
+        width: 100%;
+      }
+    }
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  &__head-right {
+    margin-left: 46px;
+    width: 48%;
+    text-align: justify;
+
+    @media (max-width: 1479px) {
+      width: 60%;
+    }
+
+    @media (max-width: $sm) {
+      margin-left: 24px;
+    }
+
+    @media (max-width: $xs) {
+      margin: 15px 0 0;
+      width: 100%;
+    }
+
+    &--rev {
+      width: 100%;
+    }
+
+    p:first-child {
+      margin-top: 0;
+    }
+  }
+
+  &__head-button {
+    width: 555px;
+    max-width: 100%;
+    margin: 60px auto 0;
+
+    &--small {
+      margin: 32px auto 0;
+      width: 400px;
+    }
+
+    @media (max-width: $sm) {
+      margin: 30px auto 0;
+      height: 42px;
+      font-size: 18px;
+      width: 300px;
+
+      &:before, &:after {
+        height: 40px;
+      }
+    }
+
+    @media (max-width: $xs) {
+      margin-top: 15px;
+    }
+  }
+}

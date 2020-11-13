@@ -128,6 +128,25 @@ $(document).ready(function() {
         }
     });
 
+    $('.text-page__more span').click(function(e) {
+        e.preventDefault();
+
+        $(this).remove();
+
+        $('.training__head--hidden').each(function(i) {
+            const block = $(this);
+
+            if (i == 0) {
+                block.removeClass('training__head--hidden');
+            }
+            else {
+                setTimeout(function() {
+                    block.removeClass('training__head--hidden');
+                }, i*300);
+            }
+        });
+    });
+
     $('.reviews__slider-phones').slick({
         arrows: false,
         autoplay: false,
